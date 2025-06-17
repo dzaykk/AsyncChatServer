@@ -1,0 +1,45 @@
+# Visual Studio
+*.user
+*.suo
+*.sln.docstates
+*.cache
+.vs/
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.cmake
+build/
+out/
+
+# Build artifacts
+bin/
+obj/
+Debug/
+Release/
+x64/
+*.exe
+*.pdb
+*.dll
+*.lib
+*.exp
+*.ilk
+*.iobj
+*.ipdb
+
+# Dependencies
+C:/local/OpenSSL-Win64/
+C:/local/boost_1_88_0/
+
+# Temporary files
+*~
+*.swp
+*.bak
+*.tmp
+*.log
+*.tlog
+
+# Misc
+Thumbs.db
