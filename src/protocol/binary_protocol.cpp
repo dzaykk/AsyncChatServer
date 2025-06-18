@@ -2,13 +2,24 @@
 #include <boost/asio.hpp>
 #include <algorithm>
 
-namespace chat_protocol {
+namespace protocol {
 
     // Create a text message packet
     Packet BinaryProtocol::create_text_message(const std::string& message) {
         Packet packet;
         packet.header.type = MessageType::TextMessage;
         packet.payload.assign(message.begin(), message.end());
+        packet.header.payload_length = static_cast<uint32_t>(packet.payload.size());
+        packet.header.crc32 = calculate_crc32(packet.payload);
+        return packet;
+    }
+
+    // Create an authentication request packet
+    Packet BinaryProtocol::create_auth_request(const std::string& username, const std::string& password) {
+        Packet packet;
+        packet.header.type = MessageType::AuthRequest;
+        std::string payload = username + "|" + password;
+        packet.payload.assign(payload.begin(), payload.end());
         packet.header.payload_length = static_cast<uint32_t>(packet.payload.size());
         packet.header.crc32 = calculate_crc32(packet.payload);
         return packet;
@@ -41,40 +52,6 @@ namespace chat_protocol {
     // Check packet validity using CRC32
     bool BinaryProtocol::validate(const Packet& packet) {
         return packet.header.crc32 == calculate_crc32(packet.payload);
-    }
-
-    // Asynchronously read a packet from socket
-    template<typename Handler>
-    void BinaryProtocol::async_read_packet(boost::asio::ip::tcp::socket& socket,
-        std::vector<uint8_t>& buffer,
-        Handler&& handler) {
-        boost::asio::async_read(socket, boost::asio::buffer(buffer, sizeof(PacketHeader)),
-            [&socket, &buffer, handler = std::forward<Handler>(handler)]
-            (const boost::system::error_code& ec, size_t bytes_transferred) {
-                if (ec) {
-                    handler(ec, {});
-                    return;
-                }
-
-                PacketHeader header;
-                std::memcpy(&header, buffer.data(), sizeof(PacketHeader));
-
-                if (header.payload_length > MAX_PAYLOAD_SIZE) {
-                    handler(boost::system::errc::make_error_code(boost::system::errc::message_size), {});
-                    return;
-                }
-
-                buffer.resize(sizeof(PacketHeader) + header.payload_length);
-                boost::asio::async_read(socket, boost::asio::buffer(buffer.data() + sizeof(PacketHeader), header.payload_length),
-                    [&buffer, handler = std::forward<Handler>(handler)]
-                    (const boost::system::error_code& ec, size_t bytes_transferred) {
-                        if (ec) {
-                            handler(ec, {});
-                            return;
-                        }
-                        handler(ec, deserialize(buffer));
-                    });
-            });
     }
 
     // Calculate CRC32 checksum for data

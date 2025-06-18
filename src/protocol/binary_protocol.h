@@ -4,7 +4,7 @@
 #include <vector>
 #include <boost/asio.hpp>
 
-namespace chat_protocol {
+namespace protocol {
 
     // Protocol constants
     constexpr uint8_t PROTOCOL_VERSION = 1; // Current protocol version
@@ -12,10 +12,10 @@ namespace chat_protocol {
 
     // Types of messages in the protocol
     enum class MessageType : uint8_t {
-        AuthRequest = 1,  // Client authentication request
-        AuthResponse,     // Server authentication response
-        TextMessage,      // Regular chat message
-        Logout,           // Client logout request
+        AuthRequest = 1,     // Client authentication request
+        AuthResponse,        // Server authentication response
+        TextMessage,         // Regular chat message
+        Logout,              // Client logout request
         ProtocolError = 0xFF // Error in protocol
     };
 
@@ -60,13 +60,64 @@ namespace chat_protocol {
         // Async read/write for network operations
         template<typename Handler>
         static void async_read_packet(boost::asio::ip::tcp::socket& socket,
-            std::vector<uint8_t>& buffer,
-            Handler&& handler);
+             std::vector<uint8_t>& buffer, Handler&& handler)
+        {
+            // Ensure buffer is large enough for header
+            if (buffer.size() < sizeof(PacketHeader)) {
+                buffer.resize(sizeof(PacketHeader));
+            }
+            boost::asio::async_read(socket, boost::asio::buffer(buffer, sizeof(PacketHeader)),
+                [&socket, &buffer, handler = std::forward<Handler>(handler)]
+                (const boost::system::error_code& ec, size_t bytes_transferred) mutable {
+                    if (ec) {
+                        handler(ec, {});
+                        return;
+                    }
+
+                    PacketHeader header;
+                    std::memcpy(&header, buffer.data(), sizeof(PacketHeader));
+
+                    if (header.payload_length > MAX_PAYLOAD_SIZE) {
+                        handler(boost::asio::error::message_size, {});
+                        return;
+                    }
+
+                    buffer.resize(sizeof(PacketHeader) + header.payload_length);
+                    boost::asio::async_read(
+                        socket,
+                        boost::asio::buffer(buffer.data() + sizeof(PacketHeader), header.payload_length),
+                        [&buffer, handler = std::forward<Handler>(handler)]
+                        (const boost::system::error_code& ec, size_t bytes_transferred) mutable {
+                            if (ec) {
+                                handler(ec, {});
+                                return;
+                            }
+                            try {
+                                handler(ec, deserialize(buffer));
+                            }
+                            catch (const std::exception& e) {
+                                handler(boost::asio::error::invalid_argument, {});
+                            }
+                        });
+                });
+        }
 
         template<typename Handler>
         static void async_write_packet(boost::asio::ip::tcp::socket& socket,
-            const Packet& packet,
-            Handler&& handler);
+            const Packet& packet, Handler&& handler)
+        {
+            try {
+                auto buffer = serialize(packet);
+                boost::asio::async_write(socket, boost::asio::buffer(buffer),
+                    [handler = std::forward<Handler>(handler)]
+                    (const boost::system::error_code& ec, size_t bytes_transferred) mutable {
+                        handler(ec, bytes_transferred);
+                    });
+            }
+            catch (const std::exception& e) {
+                handler(boost::asio::error::invalid_argument, 0);
+            }
+        }
 
     private:
         // Calculate CRC32 checksum for payload
