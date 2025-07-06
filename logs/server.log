@@ -1,0 +1,119 @@
+[2025-06-30 14:40:38] [INFO] Server starting...
+[2025-06-30 14:40:58] [INFO] Client connected
+[2025-06-30 14:40:58] [INFO] SSL handshake complete
+[2025-06-30 14:40:58] [INFO] TLS handshake successful.
+[2025-06-30 14:41:23] [INFO] Client disconnected
+[2025-06-30 14:41:32] [INFO] Client connected
+[2025-06-30 14:41:32] [INFO] SSL handshake complete
+[2025-06-30 14:41:32] [INFO] TLS handshake successful.
+[2025-06-30 14:41:50] [ERR ] Read error: Удаленный хост принудительно разорвал существующее подключение
+[2025-06-30 14:41:54] [INFO] Server starting...
+[2025-06-30 14:42:26] [INFO] Client connected
+[2025-06-30 14:42:26] [INFO] SSL handshake complete
+[2025-06-30 14:42:26] [INFO] TLS handshake successful.
+[2025-06-30 14:42:43] [INFO] Client disconnected
+[2025-06-30 14:43:22] [INFO] Server starting...
+[2025-06-30 14:43:30] [INFO] Client connected
+[2025-06-30 14:43:30] [INFO] SSL handshake complete
+[2025-06-30 14:43:30] [INFO] TLS handshake successful.
+[2025-06-30 14:43:36] [INFO] Client disconnected
+[2025-06-30 14:46:07] [ERR ] Connection failed: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение
+[2025-06-30 14:46:11] [INFO] Server starting...
+[2025-06-30 14:46:19] [INFO] Client connected
+[2025-06-30 14:46:19] [INFO] SSL handshake complete
+[2025-06-30 14:46:19] [INFO] TLS handshake successful.
+[2025-06-30 14:46:24] [ERR ] Read error: Удаленный хост принудительно разорвал существующее подключение
+[2025-06-30 14:46:28] [INFO] Server starting...
+[2025-06-30 14:46:41] [INFO] Client connected
+[2025-06-30 14:46:41] [INFO] SSL handshake complete
+[2025-06-30 14:46:41] [INFO] TLS handshake successful.
+[2025-06-30 14:46:50] [ERR ] Read error: Удаленный хост принудительно разорвал существующее подключение
+[2025-06-30 14:47:53] [INFO] Server starting...
+[2025-06-30 14:48:08] [INFO] Client connected
+[2025-06-30 14:48:08] [INFO] SSL handshake complete
+[2025-06-30 14:48:08] [INFO] TLS handshake successful.
+[2025-06-30 14:48:20] [ERR ] Read error: Удаленный хост принудительно разорвал существующее подключение
+[2025-06-30 14:49:18] [INFO] Server starting...
+[2025-06-30 14:49:22] [INFO] Client connected
+[2025-06-30 14:49:22] [INFO] SSL handshake complete
+[2025-06-30 14:49:22] [INFO] TLS handshake successful.
+[2025-06-30 14:49:44] [INFO] Client disconnected
+[2025-06-30 14:50:11] [INFO] Server starting...
+[2025-06-30 14:50:24] [INFO] Client connected
+[2025-06-30 14:50:24] [INFO] SSL handshake complete
+[2025-06-30 14:50:24] [INFO] TLS handshake successful.
+[2025-06-30 14:51:34] [INFO] Client disconnected
+[2025-06-30 18:15:20] [INFO] Server starting...
+[2025-06-30 18:15:22] [INFO] Client connected
+[2025-06-30 18:15:22] [INFO] SSL handshake complete
+[2025-06-30 18:15:22] [INFO] TLS handshake successful.
+[2025-06-30 18:16:02] [INFO] Client connected
+[2025-06-30 18:16:02] [INFO] SSL handshake complete
+[2025-06-30 18:16:02] [INFO] TLS handshake successful.
+[2025-06-30 18:18:26] [INFO] Client disconnected
+[2025-06-30 18:18:30] [INFO] Client disconnected
+[2025-06-30 18:19:11] [INFO] Client connected
+[2025-06-30 18:19:11] [INFO] SSL handshake complete
+[2025-06-30 18:19:11] [INFO] TLS handshake successful.
+[2025-06-30 18:37:29] [INFO] Client disconnected
+[2025-06-30 18:37:47] [INFO] Server starting...
+[2025-06-30 18:37:50] [INFO] Client connected
+[2025-06-30 18:37:50] [INFO] SSL handshake complete
+[2025-06-30 18:37:50] [INFO] TLS handshake successful.
+[2025-06-30 18:37:52] [INFO] Client connected
+[2025-06-30 18:37:52] [INFO] SSL handshake complete
+[2025-06-30 18:37:52] [INFO] TLS handshake successful.
+[2025-06-30 18:39:57] [INFO] Client disconnected
+[2025-06-30 18:40:00] [INFO] Client connected
+[2025-06-30 18:40:00] [INFO] SSL handshake complete
+[2025-06-30 18:40:00] [INFO] TLS handshake successful.
+[2025-06-30 18:44:56] [ERR ] Read error: Удаленный хост принудительно разорвал существующее подключение
+[2025-06-30 18:44:56] [ERR ] Read error: Удаленный хост принудительно разорвал существующее подключение
+[2025-06-30 18:45:23] [INFO] Server starting...
+[2025-06-30 18:45:25] [INFO] Client connected
+[2025-06-30 18:45:25] [INFO] SSL handshake complete
+[2025-06-30 18:45:25] [INFO] TLS handshake successful.
+[2025-06-30 18:50:11] [INFO] Client disconnected
+[2025-06-30 18:50:27] [INFO] Server starting...
+[2025-06-30 18:50:29] [INFO] Client connected
+[2025-06-30 18:50:29] [INFO] SSL handshake complete
+[2025-06-30 18:50:29] [INFO] TLS handshake successful.
+[2025-06-30 18:53:50] [INFO] Client disconnected
+[2025-06-30 18:56:55] [INFO] Server starting...
+[2025-06-30 18:56:57] [INFO] Client connected
+[2025-06-30 18:56:57] [INFO] SSL handshake complete
+[2025-06-30 18:56:57] [INFO] TLS handshake successful.
+[2025-06-30 18:57:13] [INFO] Client connected
+[2025-06-30 18:57:13] [INFO] SSL handshake complete
+[2025-06-30 18:57:13] [INFO] TLS handshake successful.
+[2025-06-30 19:05:26] [INFO] Client disconnected
+[2025-07-06 16:25:41] [INFO] Server starting...
+[2025-07-06 16:25:45] [INFO] Server starting...
+[2025-07-06 16:26:08] [INFO] Client connected
+[2025-07-06 16:26:08] [INFO] SSL handshake complete
+[2025-07-06 16:26:08] [INFO] TLS handshake successful.
+[2025-07-06 16:26:30] [INFO] Client connected
+[2025-07-06 16:26:30] [INFO] SSL handshake complete
+[2025-07-06 16:26:30] [INFO] TLS handshake successful.
+[2025-07-06 16:29:16] [INFO] Server starting...
+[2025-07-06 16:29:17] [INFO] Client connected
+[2025-07-06 16:29:17] [INFO] SSL handshake complete
+[2025-07-06 16:29:17] [INFO] TLS handshake successful.
+[2025-07-06 16:35:03] [INFO] Server starting...
+[2025-07-06 16:35:05] [INFO] Client connected
+[2025-07-06 16:35:05] [INFO] SSL handshake complete
+[2025-07-06 16:35:05] [INFO] Connected to server via TLS
+[2025-07-06 16:35:27] [INFO] Client connected
+[2025-07-06 16:35:27] [INFO] SSL handshake complete
+[2025-07-06 16:35:27] [INFO] Connected to server via TLS
+[2025-07-06 16:40:59] [INFO] Client disconnected: anoxie
+[2025-07-06 16:41:00] [ERR ] Read thread exception: read_some: Удаленный хост принудительно разорвал существующее подключение [system:10054]
+[2025-07-06 16:41:18] [INFO] Server starting...
+[2025-07-06 16:41:20] [INFO] Client connected
+[2025-07-06 16:41:20] [INFO] SSL handshake complete
+[2025-07-06 16:41:20] [INFO] Connected to server via TLS
+[2025-07-06 16:41:29] [INFO] Client connected
+[2025-07-06 16:41:29] [INFO] SSL handshake complete
+[2025-07-06 16:41:29] [INFO] Connected to server via TLS
+[2025-07-06 16:56:29] [INFO] Client disconnected: dzay
+[2025-07-06 16:56:31] [ERR ] Read thread exception: read_some: Удаленный хост принудительно разорвал существующее подключение [system:10054]
