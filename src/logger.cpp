@@ -20,7 +20,7 @@ namespace chat {
     }
 
     Logger& Logger::instance() {
-        static Logger logger("C:/Users/softd/source/repos/AsyncChatServer/logs/server.log");
+        static Logger logger("logs/server.log");
         return logger;
     }
 
